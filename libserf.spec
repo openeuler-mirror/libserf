@@ -67,7 +67,6 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 %defattr(-,root,root)
 %doc README CHANGES design-guide.txt
 
-
 %changelog
 * Fri Mon 20 2020 songnannan <songnannan2@huawei.com> - 1.3.9-12
 - add gdb in buildrequires
