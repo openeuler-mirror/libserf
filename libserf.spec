@@ -3,12 +3,12 @@
 
 Name:           libserf
 Version:        1.3.9
-Release:        11
+Release:        12
 Summary:        High-Performance Asynchronous HTTP Client Library
 License:        ASL 2.0
 URL:            https://serf.apache.org/
 Source0:        https://archive.apache.org/dist/serf/serf-%{version}.tar.bz2
-BuildRequires:  gcc, %{scons_pkg}, pkgconfig, zlib-devel
+BuildRequires:  gcc, %{scons_pkg}, pkgconfig, zlib-devel gdb
 BuildRequires:  apr-devel, apr-util-devel, krb5-devel, openssl-devel
 
 Patch0:         %{name}-norpath.patch
@@ -67,7 +67,9 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 %defattr(-,root,root)
 %doc README CHANGES design-guide.txt
 
-
 %changelog
+* Fri Mon 20 2020 songnannan <songnannan2@huawei.com> - 1.3.9-12
+- add gdb in buildrequires
+
 * Mon Sep 16 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.3.9-11
 - Package init
