@@ -3,7 +3,7 @@
 
 Name:           libserf
 Version:        1.3.9
-Release:        12
+Release:        13
 Summary:        High-Performance Asynchronous HTTP Client Library
 License:        ASL 2.0
 URL:            https://serf.apache.org/
@@ -68,6 +68,9 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 %doc README CHANGES design-guide.txt
 
 %changelog
+* Mon May 18 2020 wangchen <wangchen137@huawei.com> - 1.3.9-13
+- rebuild for libserf
+
 * Fri Mon 20 2020 songnannan <songnannan2@huawei.com> - 1.3.9-12
 - add gdb in buildrequires
 
