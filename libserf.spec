@@ -3,7 +3,7 @@
 
 Name:           libserf
 Version:        1.3.9
-Release:        13
+Release:        14
 Summary:        High-Performance Asynchronous HTTP Client Library
 License:        ASL 2.0
 URL:            https://serf.apache.org/
@@ -68,6 +68,12 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 %doc README CHANGES design-guide.txt
 
 %changelog
+* Thu Apr 28 2022 xinghe <xinghe2@h-partners.com> - 1.3.9-14
+- Type:bugfix
+- ID:NA
+- SUG:NA
+- DESC:rebuild package
+
 * Mon Jul 19 2021 lijingyuan <lijingyuan3@huawei.com> - 1.3.9-13
 - Type:requirement
 - ID:NA
