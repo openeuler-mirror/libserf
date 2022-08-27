@@ -80,7 +80,7 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 - SUG:NA
 - DESC:cancel gdb in buildrequires
 
-* Fri Mon 20 2020 songnannan <songnannan2@huawei.com> - 1.3.9-12
+* Fri Mar 20 2020 songnannan <songnannan2@huawei.com> - 1.3.9-12
 - add gdb in buildrequires
 
 * Mon Sep 16 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.3.9-11
