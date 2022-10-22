@@ -3,7 +3,7 @@
 
 Name:           libserf
 Version:        1.3.9
-Release:        14
+Release:        15
 Summary:        High-Performance Asynchronous HTTP Client Library
 License:        ASL 2.0
 URL:            https://serf.apache.org/
@@ -15,9 +15,10 @@ Patch0:         %{name}-norpath.patch
 Patch1:         %{name}-python3.patch
 
 %description
-The serf library is a high performance C-based HTTP client library built upon
-the Apache Portable Runtime (APR) library. It is permissively licensed under
-the Apache License, v2.
+The serf library is a C-based HTTP client library built upon the Apache 
+Portable Runtime (APR) library. It multiplexes connections, running the
+read/write communication asynchronously. Memory copies and transformations are
+kept to a minimum to provide high performance operation.
 
 %package        devel
 Summary:        Development files for %{name}
@@ -68,6 +69,12 @@ export LD_LIBRARY_PATH=%{buildroot}%{_libdir}
 %doc README CHANGES design-guide.txt
 
 %changelog
+* Sat Oct 22 2022 gaihuiying <eaglegai@163.com> - 1.3.9-15
+- Type:bugfix
+- ID:NA
+- SUG:NA
+- DESC:modify description about libserf
+
 * Thu Apr 28 2022 xinghe <xinghe2@h-partners.com> - 1.3.9-14
 - Type:bugfix
 - ID:NA
