@@ -1,0 +1,38 @@
+From aa8e7871ddf3f852f79161f83a8f51f1fa186e42 Mon Sep 17 00:00:00 2001
+From: sjxur <sjxur@isoftstone.com>
+Date: Mon, 24 Apr 2023 17:26:43 +0800
+Subject: [PATCH] fix CC compiler error
+
+---
+ SConstruct | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/SConstruct b/SConstruct
+index 4358a23..01aa8f7 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -72,6 +72,12 @@ else:
+   default_libdir='$PREFIX/lib'
+   default_prefix='/usr/local'
+ 
++cc_key = os.getenv('CC', 'null')
++if cc_key == 'null':
++   os_cc='gcc'
++else:
++   os_cc = os.environ["CC"]
++
+ opts = Variables(files=[SAVED_CONFIG])
+ opts.AddVariables(
+   PathVariable('PREFIX',
+@@ -108,7 +114,7 @@ opts.AddVariables(
+   BoolVariable('APR_STATIC',
+                "Enable using a static compiled APR",
+                False),
+-  RawListVariable('CC', "Command name or path of the C compiler", None),
++  RawListVariable('CC', "Command name or path of the C compiler", os_cc),
+   RawListVariable('CFLAGS', "Extra flags for the C compiler (space-separated)",
+                   None),
+   RawListVariable('LIBS', "Extra libraries passed to the linker, "
+-- 
+2.33.0
+
