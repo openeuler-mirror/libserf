@@ -1,0 +1,23 @@
+--- a/SConstruct	2015-09-17 20:46:24.000000000 +0800
++++ b/SConstruct	2023-04-19 18:09:14.929780619 +0800
+@@ -108,15 +108,15 @@
+   BoolVariable('APR_STATIC',
+                "Enable using a static compiled APR",
+                False),
+-  RawListVariable('CC', "Command name or path of the C compiler", None),
++  RawListVariable('CC', "Command name or path of the C compiler", os.environ.get('CC')),
+   RawListVariable('CFLAGS', "Extra flags for the C compiler (space-separated)",
+-                  None),
++                  os.environ.get('CFLAGS')),
+   RawListVariable('LIBS', "Extra libraries passed to the linker, "
+-                  "e.g. \"-l<library1> -l<library2>\" (space separated)", None),
++                  "e.g. \"-l<library1> -l<library2>\" (space separated)", os.environ.get('LIBS')),
+   RawListVariable('LINKFLAGS', "Extra flags for the linker (space-separated)",
+-                  None),
++                  os.environ.get('LINKFLAGS')),
+   RawListVariable('CPPFLAGS', "Extra flags for the C preprocessor "
+-                  "(space separated)", None), 
++                  "(space separated)", os.environ.get('CPPFLAGS')), 
+   )
+ 
+ if sys.platform == 'win32':
